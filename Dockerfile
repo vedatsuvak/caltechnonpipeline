@@ -4,8 +4,10 @@ EXPOSE 8085
 ADD target/Nov9SpringCoreZumba.war Nov9SpringCoreZumba.war
 ENTRYPOINT [ "java", "-jar", "/Nov9SpringCoreZumba.war" ]
 
-# Final stage
+# Final stage for AMD64
 FROM adoptopenjdk:17-jdk-hotspot-bionic as jdk-amd64
+
+# Final stage for ARM64
 FROM adoptopenjdk:17-jdk-hotspot-bionic-arm64 as jdk-arm64
 
 FROM debian:buster-slim
